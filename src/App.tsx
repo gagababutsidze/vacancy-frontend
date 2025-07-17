@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Container from './components/Container';
+import Footer from './components/Footer';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Publication from './pages/Publication';
+import JobDetails from './pages/JobDetails';
+import JobsFiltered from './pages/JobsFiltered';
+import Login from './pages/Login';
+import Profile from './pages/Profile';
+import MyVacancies from './pages/MyVacancies';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <div className="content">
+        <Routes> 
+            <Route path='/' element={<Container/>}/>
+            <Route path='/publication' element={<Publication/>}/>
+            <Route path="/jobs/:id" element={<JobDetails/>} />
+            <Route path="/jobs" element={<JobsFiltered />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/my-vacancies" element={<MyVacancies />} />
+        </Routes>
+      </div>
+        
+      <Footer/>
+
     </div>
   );
 }
