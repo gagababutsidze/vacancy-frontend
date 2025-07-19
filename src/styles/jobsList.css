@@ -43,3 +43,12 @@
 .delete-button:active {
   transform: scale(0.97);
 }
+
+
+  @media (min-width: 480px) and (max-width: 768px) {
+    .job-card, .job {
+
+     border-radius: 0px;
+
+    }
+  }
