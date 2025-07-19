@@ -1,4 +1,4 @@
-import logo from '../assets/logggo.png'
+import logo from '../assets/searchlogo.png'
 import '../styles/header.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -7,9 +7,14 @@ import { useNavigate } from 'react-router-dom';
 const Header = () => {
 
     const navigate = useNavigate()
+    const token = window.localStorage.getItem('token')
 
     const handleClick = () => {
-        navigate('/profile')
+        if (token) {
+            navigate('/profile')
+        }else{
+        navigate('/login')
+        }
     }
 
     const mainLInk = () => {
@@ -26,7 +31,7 @@ const Header = () => {
             <h1>მოიძიე შენი მომავალი სამსახური</h1>
 
             <div>
-            <FontAwesomeIcon onClickCapture={handleClick} icon={faUser} />
+            <FontAwesomeIcon className='icon' onClickCapture={handleClick} icon={faUser} />
             </div>
         </header>
     )

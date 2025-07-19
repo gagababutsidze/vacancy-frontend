@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom"
 const Container = () => {
 
   const navigate = useNavigate();
+    const [filteredJobs, setFilteredJobs] = useState([]); // ცარიელი მასივით ვიწყებთ
 
   const handleCategoryClick = (category: string) => {
     navigate(`/jobs?category=${category}`);
@@ -44,11 +45,11 @@ const Container = () => {
 
   return(
      <div className="container">
-      <SearchBox/>
+      <SearchBox  onFilter={setFilteredJobs} />
       
-    <h2>🔥 ვაკანსიები</h2>
+    <h2> ვაკანსიები</h2>
     <div className="jobs">
-      <JobsList/>
+      <JobsList jobss={filteredJobs} />
     </div>
 
    

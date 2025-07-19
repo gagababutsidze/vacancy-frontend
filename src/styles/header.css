@@ -6,9 +6,15 @@
 .logo-text-out-div{
     width: 100px;
     height: 100px;
+    cursor: pointer;
 }
 .header{
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.icon {
+    font-size: 30px;
+    cursor: pointer;
 }

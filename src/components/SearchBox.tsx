@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
-const SearchBox = () => {
+const SearchBox = ({ onFilter }:any) => {
   const [position, setPosition] = useState('');
   const [location, setLocation] = useState('');
 
@@ -18,6 +18,7 @@ const SearchBox = () => {
       })
       .then((res) => {
         console.log('მიღებული ვაკანსიები:', res.data);
+        onFilter(res.data); 
         // აქ შეგიძლია შედეგების setState გააკეთო ან props-ის სახით გააგზავნო
       })
       .catch((err) => {
@@ -35,7 +36,7 @@ const SearchBox = () => {
       navigate("/login");
 
 
-      alert('ნეტა არა ბოდიალომდე!!!')
+      
     }
   };
 
@@ -55,9 +56,7 @@ const SearchBox = () => {
       <label>
         <select className='select' name="type" >
           <option value="full-time" >ნებისმიერ ადგილას</option>
-          <option value="part-time" >თბილისი</option>
-          <option value="contract"  >შიდა ქართლი</option>
-          <option value="internship" >აჭარა</option>
+    
         </select>
       </label>
 
