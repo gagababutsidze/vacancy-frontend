@@ -109,3 +109,9 @@
       color: white;
 
     }
+
+    @media (max-width: 480px) {
+      .content{
+        padding: 0;
+      }
+  }
