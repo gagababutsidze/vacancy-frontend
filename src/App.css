@@ -114,4 +114,7 @@
       .content{
         padding: 0;
       }
+      .search-box{
+        padding: 1rem;
+      }
   }
