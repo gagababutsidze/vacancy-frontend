@@ -10,7 +10,7 @@ function JobsList({ jobss }: any) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`${route}/all-jobs`)
+    axios.get(`${route}vacancy-ap/all-jobs`)
       .then(res => {
         setJobs(res.data);
         setLoading(false);
