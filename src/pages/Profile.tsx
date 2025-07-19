@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import '../styles/profile.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import route from '../route';
 
 
 const Profile = () => {
@@ -14,7 +15,7 @@ const Profile = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/users/get-your-acc/`, {
+        axios.get(`${route}users/get-your-acc/`, {
   headers: {
     Authorization: `Bearer ${token}`
   }

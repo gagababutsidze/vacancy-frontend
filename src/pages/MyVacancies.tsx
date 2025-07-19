@@ -2,6 +2,7 @@ import userEvent from "@testing-library/user-event"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import route from "../route"
 
 
 const MyVacancies = () => {
@@ -11,7 +12,7 @@ const MyVacancies = () => {
     const [loading, setLoading] = useState(true); // იტვირთება
 
    useEffect(() => {
-        axios.get(`http://localhost:3000/vacancy/get-my-vacancies`, {
+        axios.get(`${route}vacancy/get-my-vacancies`, {
   headers: {
     Authorization: `Bearer ${token}`
   }
@@ -48,7 +49,7 @@ const MyVacancies = () => {
           </div>
           </Link>
           <button onClick={() => {
-            axios.delete(`http://localhost:3000/vacancy/delete-vacancy/${job.id}`,{
+            axios.delete(`${route}vacancy/delete-vacancy/${job.id}`,{
   headers: {
     Authorization: `Bearer ${token}`
   }

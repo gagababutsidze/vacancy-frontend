@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useState } from 'react'
 import '../styles/publication.css'
+import route from '../route'
 
 const Publication = () => {
 
@@ -33,7 +34,7 @@ const Publication = () => {
     console.log("დაგზავნილი მონაცემები:", formData);
     // აქ შეგიძლია axios ან fetch გამოყენო მონაცემების გაგზავნისთვის
 
-    axios.post('http://localhost:3000/vacancy/add-vacancy', formData, {
+    axios.post(`${route}vacancy/add-vacancy`, formData, {
   headers: {
     Authorization: `Bearer ${token}`
   }

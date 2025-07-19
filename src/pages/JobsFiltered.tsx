@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import route from "../route";
 
 const JobsFiltered = () => {
   const [searchParams] = useSearchParams();
@@ -11,7 +12,7 @@ const JobsFiltered = () => {
 
   useEffect(() => {
     if (category) {
-      axios.get(`http://localhost:3000/vacancy-api/jobs?category=${category}`)
+      axios.get(`${route}vacancy-api/jobs?category=${category}`)
         .then(res => {
           setJobs(res.data);
           setLoading(false);

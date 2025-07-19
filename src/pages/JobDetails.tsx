@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import route from '../route';
 
 const JobDetails = () => {
   const { id } = useParams();
@@ -8,7 +9,7 @@ const JobDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/vacancy-api/jobs/${id}`).then((res:any) => {
+    axios.get(`${route}vacancy-api/jobs/${id}`).then((res:any) => {
         console.log(res.data);
         const data = res.data[0]
         setJob(data);

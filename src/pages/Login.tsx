@@ -2,6 +2,7 @@ import '../styles/login.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import route from '../route';
 
 const Login = () => {
   const [visibleDiv, setVisibleDiv] = useState<any>('first');
@@ -37,7 +38,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/users/registration', {
+      const response = await axios.post(`${route}users/registration`, {
         name,
         email,
         passwordd,

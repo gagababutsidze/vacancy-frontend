@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import route from '../route';
 
 const SearchBox = ({ onFilter }:any) => {
   const [position, setPosition] = useState('');
@@ -10,7 +11,7 @@ const SearchBox = ({ onFilter }:any) => {
   // Fetch (მაგალითად ძებნისას)
   const handleSearch = () => {
     axios
-      .get(`http://localhost:3000/vacancy-api/jobss?jobName=${position}`, {
+      .get(`${route}vacancy-api/jobss?jobName=${position}`, {
         params: {
           category: position,
           location: location,
