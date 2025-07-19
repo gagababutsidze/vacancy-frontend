@@ -12,7 +12,7 @@ function JobsList({ jobss }: any) {
   useEffect(() => {
     axios.get(`${route}vacancy-api/all-jobs`)
       .then(res => {
-        setJobs(res.data);
+        setJobs(res.data.reverse());
         setLoading(false);
       })
       .catch(error => {
