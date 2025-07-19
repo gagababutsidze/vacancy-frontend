@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react';
 import '../styles/jobsList.css'
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import route from '../route';
 
 function JobsList({ jobss }: any) {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/vacancy-api/all-jobs')
+    axios.get(`${route}/all-jobs`)
       .then(res => {
         setJobs(res.data);
         setLoading(false);
