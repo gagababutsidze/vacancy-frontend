@@ -54,12 +54,13 @@ const SearchBox = ({ onFilter }:any) => {
         onChange={(e) => setPosition(e.target.value)}
       />
 
-      <label>
+    {/*<label>
         <select className='select' name="type" >
           <option value="full-time" >ნებისმიერ ადგილას</option>
     
         </select>
       </label>
+ */}  
 
   
 
