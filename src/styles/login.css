@@ -65,3 +65,15 @@
 .auth-form button:hover {
   background-color: #0062cc;
 }
+
+
+
+@media (min-width: 344px) and (max-width: 768px) {
+
+  .auth-card{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+  }
+
+}
