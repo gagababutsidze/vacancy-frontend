@@ -35,9 +35,11 @@ function JobsList({ jobss }: any) {
         jobsToShow.map((job: any, index: any) => (
           <Link key={job.id || index} className='link' to={`/jobs/${job.id}`}>
             <div className="job-card job">
-              <h3>{job.title}</h3>
-              <p>{job.created_by}</p>
-              <p><strong>მდებარეობა:</strong> {job.location}</p>        
+              <div className='div1'>
+                  <h3>{job.title}</h3>      
+                  <p className='location'>{job.location}</p>  
+              </div> 
+               <p>{job.created_by}</p>      
               <p><strong>ხელფასი:</strong> {job.salary_min} - {job.salary_max} ₾</p>
             </div>
           </Link>
