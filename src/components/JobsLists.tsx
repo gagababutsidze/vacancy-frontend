@@ -36,7 +36,8 @@ function JobsList({ jobss }: any) {
           <Link key={job.id || index} className='link' to={`/jobs/${job.id}`}>
             <div className="job-card job">
               <div className='div1'>
-                  <h3>{job.title}</h3>      
+                  <h3>{job.title}</h3>  
+                  -    
                   <p className='location'>{job.location}</p>  
               </div> 
                <p>{job.created_by}</p>      
