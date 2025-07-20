@@ -76,4 +76,13 @@
     padding: 1rem;
   }
 
+  .auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f7fb;
+  
+  padding: 0;
+}
+
 }
